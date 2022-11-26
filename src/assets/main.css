@@ -1,35 +1,33 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+:root{
+  --primary: #e7daff;
+  --secondary: #ceb5ff;
+  --success: #9062ea;
+  --info: #e7daff;
+  --warning: #6545a4;
+  --danger: #E3371E;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.bg-primary, .btn-primary{
+  background-color: var(--primary) !important;
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.bg-secondary, .btn-secondary{
+  background-color: var(--secondary) !important;
 }
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.bg-success, .btn-success{
+  background-color: var(--success) !important;
+}
+.bg-info, .btn-info{
+  background-color: var(--info) !important;
+}
+.bg-warning, .btn-warning{
+  background-color: var(--warning) !important;
+}
+.bg-danger .btn-danger{
+  background-color: var(--danger) !important;
+}
+.nav-link {
+  color: var(--primary) !important ;
+}
+.nav-link:hover{
+  color: var(--warning) !important ; 
 }
