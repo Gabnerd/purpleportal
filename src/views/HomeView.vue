@@ -19,7 +19,7 @@ axios.get("https://dummyjson.com/posts").then((res) => {
 <template>
   <main class="row align-items-center justify-content-center mx-0">
     <div class="mt-2" style="display: flex; justify-content: flex-end; width: 80%;">
-      <button class="btn rounded-circle btn-success border text-white">+</button>
+      <button class="btn rounded-pill btn-success border text-white">+ adicionar</button>
     </div>
     <div class="flex-col align-items-center justify-content-center mt-2" style="width: 80%;">
       <PostComponent v-for="post in posts" :id="post.id" :titulo="post.title" :body="post.body" :tags="post.tags"

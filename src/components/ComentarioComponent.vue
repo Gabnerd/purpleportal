@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: ['id', 'body', 'imgurl', 'autor']
+    props: ['body', 'autor']
 }
 </script>
 

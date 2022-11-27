@@ -3,7 +3,7 @@ export default {
   props: ["titulo", "body", "tags", "autor", "imgurl", "id"],
   components: { ComentarioComponent },
   data() {
-    return { comments: reactive([]), loading: false };
+    return { comments: reactive([]), loading: false, levecommode: false, newcom: ref('') };
   },
   methods: {
     loadComments() {
@@ -14,12 +14,20 @@ export default {
           this.loading = false;
         });
       }
+    },
+    enterCommentMode() {
+      this.levecommode = true;
+    },
+    sendCommentario(){
+      this.levecommode = false;
+      this.comments.push({body: this.newcom, user: {username: "anonymous"}});
+      this.newcom = "";
     }
   }
 }
 import ComentarioComponent from './ComentarioComponent.vue';
 import axios from 'axios';
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 
 </script>
 
@@ -44,8 +52,20 @@ import { reactive } from 'vue';
         <div :id="'flush-collapseOne' + id" class="accordion-collapse collapse "
           :aria-labelledby="'flush-headingOne' + id" :data-bs-parent="'#accordionFlushExample' + id">
           <div class="accordion-body d-flex justify-content-center row">
-            <ComentarioComponent v-for="comment in comments" :id="comment.id" :body="comment.body"
+            <ComentarioComponent v-for="comment in comments" :body="comment.body"
               :autor="comment.user.username" />
+            <div class="d-flex row">
+              <button type="button" class="btn btn-outline-secondary" @click="enterCommentMode()"
+                v-if="!levecommode">Adicionar comentario</button>
+                <div class="d-flex" v-if="levecommode">
+                  <div class="form-floating form-comentario ">
+  <input class="form-control" id="floatingInput" v-model="newcom" placeholder="muito legal a publicação">
+  <label for="floatingInput">Comentario</label>
+</div>
+          
+              <button class="btn btn-success btn-send" type="button" @click="sendCommentario()">Enviar <i class="bi bi-send-fill"></i></button>
+            </div>
+            </div>
             <div class="spinner-border text-primary " v-if="loading" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
@@ -61,6 +81,13 @@ img {
   width: 30px;
 }
 
+.form-comentario{
+  width: 85%;
+}
+
+.btn-send{
+  width: 15%;
+}
 
 .body {
   text-align: justify;
