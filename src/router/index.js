@@ -7,8 +7,18 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      redirect: '/posts'
+    },
+    {
+      path: '/posts',
+      name: 'posts',
       component: HomeView
     },
+    {
+      path: '/posts/new',
+      name: 'cadastroPost',
+      component: () => import('../views/CadastroPostView.vue')
+    }
     //{
       //path: '/about',
       //name: 'about',

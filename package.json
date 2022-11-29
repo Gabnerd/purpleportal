@@ -18,5 +18,8 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
     "vite": "^3.2.4"
+  },
+  "vue":{
+    "outputDir": "docs"
   }
 }

@@ -9,21 +9,27 @@
 
 .bg-primary, .btn-primary{
   background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
 }
 .bg-secondary, .btn-secondary{
   background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
 }
 .bg-success, .btn-success{
   background-color: var(--success) !important;
+  border-color: var(--success) !important;
 }
 .bg-info, .btn-info{
   background-color: var(--info) !important;
+  border-color: var(--info) !important;
 }
 .bg-warning, .btn-warning{
   background-color: var(--warning) !important;
+  border-color: var(--warning) !important;
 }
 .bg-danger .btn-danger{
   background-color: var(--danger) !important;
+  border-color: var(--danger) !important;
 }
 .nav-link {
   color: var(--primary) !important ;
