@@ -32,7 +32,7 @@
   border-color: var(--danger) !important;
 }
 .nav-link {
-  color: var(--primary) !important ;
+  color: var(--warning) !important ;
 }
 .nav-link:hover{
   color: var(--warning) !important ; 
