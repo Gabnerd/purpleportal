@@ -16,31 +16,55 @@
   color: var(--primary) !important;
 }
 
-.bg-secondary, .btn-secondary, .text-secondary{
+.bg-secondary, .btn-secondary{
   background-color: var(--secondary) !important;
   border-color: var(--secondary) !important;
+
+}
+
+.text-secondary{
   color: var(--secondary) !important;
 }
-.bg-success, .btn-success, .text-success{
+
+.bg-success, .btn-success{
   background-color: var(--success) !important;
   border-color: var(--success) !important;
+
+}
+
+.text-success{
   color: var(--success) !important;
 }
-.bg-info, .btn-info, .text-info{
+.bg-info, .btn-info{
   background-color: var(--info) !important;
   border-color: var(--info) !important;
+
+}
+
+.text-info{
   color: var(--info) !important;
 }
-.bg-warning, .btn-warning, .text-info{
+
+.bg-warning, .btn-warning{
   background-color: var(--warning) !important;
   border-color: var(--warning) !important;
+
+}
+
+.text-info{
   color: var(--warning) !important;
 }
-.bg-danger .btn-danger, .text-danger{
+
+.bg-danger .btn-danger{
   background-color: var(--danger) !important;
   border-color: var(--danger) !important;
+
+}
+
+.text-danger{
   color: var(--danger) !important;
 }
+
 .nav-link {
   color: var(--warning) !important ;
 }
