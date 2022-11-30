@@ -73,22 +73,27 @@ loadPost()
         </ul>
         <div>
 
-          <div class="btn-group">
+          <div class="btn-group" v-if="user">
             <button type="button" class="d-flex align-items-center btn  dropdown-toggle" data-bs-toggle="dropdown"
               aria-expanded="false">
               <img :src="user.image" class="border rounded-circle border-dark me-1 user-img" />
               <p class="mb-0 ms-2 ">{{ user.username }}</p>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
             </ul>
           </div>
+          <div class="btn-group" v-if="!user">
+            <button type="button" class="d-flex align-items-center btn  dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-person-circle user-img"></i>
+              <p class="mb-0 ">Anonymous</p>
+            </button>
+            <ul class="dropdown-menu">
+              <li><RouterLink class="dropdown-item" to="/login">Login</RouterLink></li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
@@ -115,5 +120,6 @@ loadPost()
 
 .user-img {
   width: 50px;
+  font-size: 1.5rem;
 }
 </style>
