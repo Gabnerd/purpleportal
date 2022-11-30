@@ -52,7 +52,7 @@ loadPost()
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg bg-success">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
@@ -73,8 +73,8 @@ loadPost()
         </ul>
         <div>
 
-          <div class="btn-group" v-if="user">
-            <button type="button" class="d-flex align-items-center btn  dropdown-toggle" data-bs-toggle="dropdown"
+          <div class="btn-group " v-if="user">
+            <button type="button" class="d-flex align-items-center btn  dropdown-toggle text-info" data-bs-toggle="dropdown"
               aria-expanded="false">
               <img :src="user.image" class="border rounded-circle border-dark me-1 user-img" />
               <p class="mb-0 ms-2 ">{{ user.username }}</p>
@@ -84,10 +84,10 @@ loadPost()
             </ul>
           </div>
           <div class="btn-group" v-if="!user">
-            <button type="button" class="d-flex align-items-center btn  dropdown-toggle" data-bs-toggle="dropdown"
+            <button type="button" class="d-flex align-items-center btn  dropdown-toggle text-info" data-bs-toggle="dropdown"
               aria-expanded="false">
               <i class="bi bi-person-circle user-img"></i>
-              <p class="mb-0 ">Anonymous</p>
+              <p class="mb-0 text-info">Anonymous</p>
             </button>
             <ul class="dropdown-menu">
               <li><RouterLink class="dropdown-item" to="/login">Login</RouterLink></li>

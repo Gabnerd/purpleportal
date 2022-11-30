@@ -7,29 +7,35 @@
   --danger: #E3371E;
 }
 
-.bg-primary, .btn-primary{
+.bg-primary, .btn-primary, .text-primary{
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
+  color: var(--primary) !important;
 }
-.bg-secondary, .btn-secondary{
+.bg-secondary, .btn-secondary, .text-secondary{
   background-color: var(--secondary) !important;
   border-color: var(--secondary) !important;
+  color: var(--secondary) !important;
 }
-.bg-success, .btn-success{
+.bg-success, .btn-success, .text-success{
   background-color: var(--success) !important;
   border-color: var(--success) !important;
+  color: var(--success) !important;
 }
-.bg-info, .btn-info{
+.bg-info, .btn-info, .text-info{
   background-color: var(--info) !important;
   border-color: var(--info) !important;
+  color: var(--info) !important;
 }
-.bg-warning, .btn-warning{
+.bg-warning, .btn-warning, .text-info{
   background-color: var(--warning) !important;
   border-color: var(--warning) !important;
+  color: var(--warning) !important;
 }
-.bg-danger .btn-danger{
+.bg-danger .btn-danger, .text-danger{
   background-color: var(--danger) !important;
   border-color: var(--danger) !important;
+  color: var(--danger) !important;
 }
 .nav-link {
   color: var(--warning) !important ;
