@@ -7,11 +7,15 @@
   --danger: #E3371E;
 }
 
-.bg-primary, .btn-primary, .text-primary{
+.bg-primary, .btn-primary{
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
+  
+}
+.text-primary{
   color: var(--primary) !important;
 }
+
 .bg-secondary, .btn-secondary, .text-secondary{
   background-color: var(--secondary) !important;
   border-color: var(--secondary) !important;
