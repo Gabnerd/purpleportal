@@ -2,6 +2,7 @@
 import PostComponent from '../components/PostComponent.vue'
 import axios from 'axios';
 import { useCookies } from 'vue3-cookies';
+import router from '@/router/index';
 import { ref, reactive, onMounted, onUnmounted } from 'vue';
 const { cookies } = useCookies();
 
@@ -80,7 +81,7 @@ loadPost()
               <p class="mb-0 ms-2 ">{{ user.username }}</p>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Logout</a></li>
+              <li><a class="dropdown-item" @click="()=>{cookies.remove('user');router.go(router.currentRoute)}">Logout</a></li>
             </ul>
           </div>
           <div class="btn-group" v-if="!user">
