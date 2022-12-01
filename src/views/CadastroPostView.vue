@@ -5,6 +5,15 @@
     const {cookies} = useCookies();
    
     const user = cookies.get("user");
+    const titulo = ref('');
+    const conteudo = ref('');
+    const msg = ref('');
+
+    const cadastrar = () =>{
+        titulo.value = '';
+        conteudo.value = '';
+        msg.value = 'Postagem cadastrada com sucesso!\nobs: Apenas cadastro ficticio.';
+    }
 </script>
 
 <template>
@@ -14,16 +23,19 @@
                 <button class="btn p-0 mb-2" style="font-size: 1.5rem; color: rgb(98, 0, 143);" @click="()=>{router.go(-1)}"><i class="bi bi-arrow-left-circle-fill"></i></button>
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="titulo" placeholder="titulo">
-                <label for="titulo">Titulo</label>
+                <input type="email" class="form-control" id="titulo" v-model="titulo" placeholder="titulo">
+                <label for="titulo" >Titulo</label>
             </div>
             <div class="form-floating mb-3">
                 <textarea class="form-control" placeholder="digitar o conteudo" id="conteudo"
-                    style="height: 200px"></textarea>
+                    style="height: 200px" v-model="conteudo"></textarea>
                 <label for="conteudo">Conteudo</label>
             </div>
-            <button class="btn btn-success" v-if="user">Cadastrar</button>
-            <button class="btn btn-danger" v-if="!user">Necessario Login para faz post</button>
+            <button class="btn btn-success" v-if="user" @click="cadastrar()">Cadastrar</button>
+            <div class="mt-2 rounded bg-secondary px-2">
+                <p class="text-warning">{{msg}}</p>
+            </div>
+            <button class="btn btn-danger" v-if="!user" @click="()=>{router.go('/login')}">Necessario Login para faz post</button>
         </div>
     </div>
 </template>

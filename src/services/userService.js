@@ -1,7 +1,8 @@
 import {useCookies} from 'vue3-cookies';
     const {cookies} = useCookies();
-module.exports = class UserService{
-    logout(){
+export default class UserService{
+    logout(router){
         cookies.remove("user");
+        router.go(router.currentRoute);
     }
 }
