@@ -18,9 +18,9 @@ export default {
     enterCommentMode() {
       this.levecommode = true;
     },
-    sendCommentario(){
+    sendCommentario() {
       this.levecommode = false;
-      this.comments.push({body: this.newcom, user: {username: "anonymous"}});
+      this.comments.push({ body: this.newcom, user: { username: "anonymous" } });
       this.newcom = "";
     }
   }
@@ -52,19 +52,20 @@ import { reactive, ref } from 'vue';
         <div :id="'flush-collapseOne' + id" class="accordion-collapse collapse "
           :aria-labelledby="'flush-headingOne' + id" :data-bs-parent="'#accordionFlushExample' + id">
           <div class="accordion-body d-flex justify-content-center row">
-            <ComentarioComponent v-for="comment in comments" :body="comment.body"
-              :autor="comment.user.username" />
+            <ComentarioComponent v-for="comment in comments" :body="comment.body" :autor="comment.user.username" />
             <div class="d-flex row">
               <button type="button" class="btn btn-outline-secondary" @click="enterCommentMode()"
                 v-if="!levecommode">Adicionar comentario</button>
-                <div class="d-flex" v-if="levecommode">
-                  <div class="form-floating form-comentario ">
-  <input class="form-control" id="floatingInput" v-model="newcom" placeholder="muito legal a publicação">
-  <label for="floatingInput">Comentario</label>
-</div>
-          
-              <button class="btn btn-success btn-send" type="button" @click="sendCommentario()">Enviar <i class="bi bi-send-fill"></i></button>
-            </div>
+              <div class="d-flex" v-if="levecommode">
+                <div class="form-floating form-comentario ">
+                  <input class="form-control" id="floatingInput" v-model="newcom"
+                    placeholder="muito legal a publicação">
+                  <label for="floatingInput">Comentario</label>
+                </div>
+
+                <button class="btn btn-success btn-send" type="button" @click="sendCommentario()">Enviar <i
+                    class="bi bi-send-fill"></i></button>
+              </div>
             </div>
             <div class="spinner-border text-primary " v-if="loading" role="status">
               <span class="visually-hidden">Loading...</span>
@@ -81,11 +82,11 @@ img {
   width: 30px;
 }
 
-.form-comentario{
+.form-comentario {
   width: 85%;
 }
 
-.btn-send{
+.btn-send {
   width: 15%;
 }
 
