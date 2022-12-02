@@ -13,6 +13,7 @@ const password = ref('');
 const logar = () =>{
     axios.post("https://dummyjson.com/auth/login", {username: username.value, password: password.value}, {headers: { 'Content-Type': 'application/json' }}).then((res)=>{
        cookies.set("user", res.data);
+       router.go(-1);
     });
 }
 </script>
