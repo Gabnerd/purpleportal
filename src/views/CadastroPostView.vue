@@ -18,7 +18,7 @@
 
 <template>
     <div id="cadpage" class="d-flex align-items-center justify-content-center">
-        <div id="form-cad-post" class="d-flex align-items-center flex-column border rounded px-4 py-3">
+        <div id="form-cad-post" class="d-flex align-items-center flex-column border rounded px-4 py-3 bg-white">
             <div>
                 <button class="btn p-0 mb-2" style="font-size: 1.5rem; color: rgb(98, 0, 143);" @click="()=>{router.go(-1)}"><i class="bi bi-arrow-left-circle-fill"></i></button>
             </div>
@@ -32,10 +32,10 @@
                 <label for="conteudo">Conteudo</label>
             </div>
             <button class="btn btn-success" v-if="user" @click="cadastrar()">Cadastrar</button>
-            <div class="mt-2 rounded bg-secondary px-2">
+            <div class="mt-2 rounded bg-secondary px-2" v-if="msg">
                 <p class="text-warning">{{msg}}</p>
             </div>
-            <button class="btn btn-danger" v-if="!user" @click="()=>{router.go('/login')}">Necessario Login para faz post</button>
+            <RouterLink class="btn btn-danger" v-if="!user" to="/login">Necessario Login para faz post</RouterLink>
         </div>
     </div>
 </template>
@@ -53,6 +53,7 @@
 
 #cadpage {
     height: 100vh;
+    background-image: url("/orion-nebula-gf582318e6_1920.jpg");
 }
 
 #form-cad-post > *{

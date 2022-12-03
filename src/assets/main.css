@@ -5,6 +5,63 @@
   --info: #e7daff;
   --warning: #6545a4;
   --danger: #E3371E;
+  --purple-1: #494368;
+  --purple-2: #0B080F;
+  --purple-3: #110127;
+  --purple-4: #110127;
+  --purple-5: #190336;
+  
+}
+
+.text-purple-1{
+  color: var(--purple-1) !important;
+}
+
+.bg-purple-1, .btn-purple-1{
+  background-color: var(--purple-1) !important;
+  border-color: var(--purple-1) !important;
+}
+
+.text-purple-2{
+  color: var(--purple-2) !important;
+}
+
+.bg-purple-2, .btn-purple-2{
+  background-color: var(--purple-2) !important;
+  border-color: var(--purple-2) !important;
+}
+
+.text-purple-3{
+  color: var(--purple-3) !important;
+}
+
+.bg-purple-3, .btn-purple-3{
+  background-color: var(--purple-3) !important;
+  border-color: var(--purple-3) !important;
+}
+
+.text-purple-4{
+  color: var(--purple-4) !important;
+}
+
+.bg-purple-4, .btn-purple-4{
+  background-color: var(--purple-4) !important;
+  border-color: var(--purple-4) !important;
+}
+
+.text-purple-5{
+  color: var(--purple-5) !important;
+}
+
+.bg-purple-5, .btn-purple-5{
+  background-color: var(--purple-5) !important;
+  border-color: var(--purple-5) !important;
+}
+
+.accordion{
+  --bs-accordion-bg: #FFF0 !important;
+  --bs-accordion-active-color: var(--warning) !important;
+  --bs-accordion-active-bg: var(--primary) !important;
 }
 
 .bg-primary, .btn-primary{

@@ -1,9 +1,11 @@
 <script>
+import UserService from "@/services/userService";
 export default {
   props: ["titulo", "body", "tags", "autor", "imgurl", "id"],
   components: { ComentarioComponent },
   data() {
-    return { comments: reactive([]), loading: false, levecommode: false, newcom: ref('') };
+    
+    return { comments: reactive([]), loading: false, levecommode: false, newcom: ref(''), userService: new UserService()};
   },
   methods: {
     loadComments() {
@@ -20,7 +22,8 @@ export default {
     },
     sendCommentario() {
       this.levecommode = false;
-      this.comments.push({ body: this.newcom, user: { username: "anonymous" } });
+      const user = this.userService.getUser();
+      this.comments.push({ body: this.newcom, user: { username: (!user?"anonymous":user.username) } });
       this.newcom = "";
     }
   }
@@ -42,8 +45,8 @@ import { reactive, ref } from 'vue';
     <p class="fs-5 body px-3">{{ body }}</p>
     <div class="accordion accordion-flush" :id="'accordionFlushExample' + id">
       <div class="accordion-item">
-        <h2 class="accordion-header" :id="'flush-headingOne' + id">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        <h2 class="accordion-header btn-post-comment" :id="'flush-headingOne' + id">
+          <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
             :data-bs-target="'#flush-collapseOne' + id" aria-expanded="false" :aria-controls="'flush-collapseOne' + id"
             @click="loadComments()">
             Comentarios
@@ -92,5 +95,9 @@ img {
 
 .body {
   text-align: justify;
+}
+
+.btn-post-comment{
+  background-color: #FFF0 !important;
 }
 </style>

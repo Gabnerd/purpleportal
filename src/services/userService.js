@@ -5,4 +5,7 @@ export default class UserService{
         cookies.remove("user");
         router.go(router.currentRoute);
     }
+    getUser(){
+        return cookies.get("user");
+    }
 }

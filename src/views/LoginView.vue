@@ -20,7 +20,7 @@ const logar = () =>{
 
 <template>
     <div id="loginpage" class="d-flex align-items-center justify-content-center">
-        <div id="form-login" class="d-flex align-items-center flex-column border rounded px-4 py-3">
+        <div id="form-login" class="d-flex align-items-center flex-column border rounded px-4 py-3 bg-white">
             <div>
                 <button class="btn p-0 mb-2" style="font-size: 1.5rem; color: rgb(98, 0, 143);"
                     @click="() => { router.go(-1) }"><i class="bi bi-arrow-left-circle-fill"></i></button>
@@ -36,6 +36,7 @@ const logar = () =>{
                 </div>
             </div>
             <button class="btn btn-success" @click="logar()">Logar</button>
+            <RouterLink to="/userslist">Adquirir usuario</RouterLink>
         </div>
     </div>
 </template>
@@ -53,6 +54,7 @@ const logar = () =>{
 
 #loginpage {
     height: 100vh;
+    background-image: url("/orion-nebula-gf582318e6_1920.jpg");
 }
 
 #form-login>* {
