@@ -55,24 +55,16 @@ loadPost()
 </script>
 
 <template>
+  <div class="bg-img">
   <nav class="navbar navbar-expand-lg bg-success">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="/favicon.png"></a>
+      <a class="navbar-brand" href="/"><img src="/favicon.png"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
         </ul>
         <div>
           <div class="btn-group " v-if="user">
@@ -109,18 +101,20 @@ loadPost()
     </div>
     <div class="flex-col  align-items-center justify-content-center mt-2" style="width: 80%;">
       <PostComponent v-for="post in posts" :id="post.id" :titulo="post.title" :body="post.body" :tags="post.tags"
-        :autor="post.username" class="border px-2 rounded mb-2" :imgurl="post.imgurl" style="width: 100%;" />
+        :autor="post.username" class="border px-2 rounded mb-2 post" :imgurl="post.imgurl" style="width: 100%;" />
 
     </div>
-    <div class="spinner-border text-warning my-2" v-if="canLoad" ref="scrollComponent" role="status">
+    <div class="spinner-border text-purple-1 my-2" v-if="canLoad" ref="scrollComponent" role="status">
       <span class="visually-hidden ">Loading...</span>
     </div>
   </main>
+</div>
 </template>
 
 <style scoped>
 #main {
   width: 100%;
+  background-color: #FFF4;
 }
 
 .user-img {
@@ -130,5 +124,14 @@ loadPost()
 
 .navbar-brand>img {
   width: 50px;
+}
+
+.bg-img{
+  background-image: url("/orion-nebula-gf582318e6_1920.jpg");
+  min-height: 100vh;
+}
+
+.post{
+  background-color: #FFFA;
 }
 </style>
